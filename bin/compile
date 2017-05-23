@@ -168,6 +168,7 @@ warn_unmet_dep "$LOG_FILE"
 # http://orm-buildpack.s3.amazonaws.com/Xvfb.tar.gz
 
 # Buildpack URL
+ARCHIVE_NAME=XVFB
 FILE_NAME=xvfb.tar.bz2
 BUILDPACK_XVFB_PACKAGE=https://s3.amazonaws.com/heroku.buildpacks/${FILE_NAME}
 
