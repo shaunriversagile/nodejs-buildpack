@@ -29,13 +29,10 @@ detect_memory() {
 export PATH="$HOME/.heroku/node/bin:$PATH:$HOME/bin:$HOME/node_modules/.bin"
 export NODE_HOME="$HOME/.heroku/node"
 export NODE_ENV=${NODE_ENV:-production}
+export ELECTRON_ENABLE_LOGGING=true
+export ELECTRON_ENABLE_STACK_DUMPING=true
 
 echo "nodejs.sh path= $PATH" 
-
-echo "ls -ltr $HOME = `ls -ltr $HOME` "
-
-echo "ls -ltr ~/bin = `ls -ltr ~/bin` "
-
 
 calculate_concurrency
 
