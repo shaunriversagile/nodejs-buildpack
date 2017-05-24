@@ -4,6 +4,5 @@
 cat << EOF
 addons: []
 default_process_types:
-  console: "nohup Xvfb &"
-  web: export PATH=/home/vcap/app/bin:$PATH; pwd; ls -ltr /home/vcap/app/bin; npm start
+  web: npm start
 EOF
