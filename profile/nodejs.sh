@@ -32,7 +32,9 @@ export NODE_ENV=${NODE_ENV:-production}
 export ELECTRON_ENABLE_LOGGING=true
 export ELECTRON_ENABLE_STACK_DUMPING=true
 
+echo " "
 echo "nodejs.sh path= $PATH" 
+echo " "
 
 calculate_concurrency
 
