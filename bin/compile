@@ -184,4 +184,5 @@ mkdir -p $BUILD_DIR/vendor
 tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
 mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/xvfb
 echo "almost done, just before apt-get after $ARCHIVE_NAME $BUILD_DIR/vendor/xvfb"
-xvfb-run
+ echo " `ls -ltr $BUILD_DIR/vendor/xvfb/` is ready"
+ $BUILD_DIR/vendor/xvfb/xvfb-run
