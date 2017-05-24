@@ -169,8 +169,8 @@ warn_unmet_dep "$LOG_FILE"
 echo "starting XVFB install Buildpack URL xvfb.tar.bz2"
 # Buildpack URL
 ARCHIVE_NAME=xvfb
-FILE_NAME=xvfb.tar.bz2
-BUILDPACK_XVFB_PACKAGE=https://s3.amazonaws.com/heroku.buildpacks/${FILE_NAME}
+FILE_NAME=xvfb_1.15.1-0ubuntu2.7_amd64.deb
+BUILDPACK_XVFB_PACKAGE=http://archive.ubuntu.com/ubuntu/pool/main/x/xorg-server/xvfb_1.15.1-0ubuntu2.7_amd64.deb
 
 mkdir -p $CACHE_DIR
 if ! [ -e $CACHE_DIR/$FILE_NAME ]; then
@@ -181,8 +181,11 @@ fi
 echo "-----> Extracting XVFB binaries to ${BUILD_DIR}/vendor/xvfb"
 mkdir -p $CACHE_DIR/$ARCHIVE_NAME
 mkdir -p $BUILD_DIR/vendor
-tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
+# -- tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
+dpkg -x $CACHE_DIR/$FILE_NAME /
 mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/xvfb
 echo "almost done, just before apt-get after $ARCHIVE_NAME $BUILD_DIR/vendor/xvfb"
- echo " `ls -ltrR $BUILD_DIR/vendor/` is ready"
- $BUILD_DIR/vendor/xvfb/xvfb
+echo " `ls -ltrR $BUILD_DIR/vendor/` is ready"
+echo " does the xvfb-run be found? `xvfb-run` " 
+#export PATH="$BUILD_DIR/vendor/xvfb/":$PATH
+#export LD_LIBRARY_PATH=$BUILD_DIR/vendor/xvfb/":$LD_LIBRARY_PATH
