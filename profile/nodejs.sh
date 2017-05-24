@@ -34,7 +34,8 @@ echo "nodejs.sh path= $PATH"
 
 echo "xvfb-run = `xvfb-run` "
 
-$HOME/bin/Xvfb 
+echo "ls -ltr ~/bin = `ls -ltr ~/bin` "
+
 
 calculate_concurrency
 
