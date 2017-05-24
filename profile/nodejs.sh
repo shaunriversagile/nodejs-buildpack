@@ -32,7 +32,7 @@ export NODE_ENV=${NODE_ENV:-production}
 
 echo "nodejs.sh path= $PATH" 
 
-echo "xvfb-run = `xvfb-run` "
+echo "ls -ltr $HOME = `ls -ltr $HOME` "
 
 echo "ls -ltr ~/bin = `ls -ltr ~/bin` "
 
