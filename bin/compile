@@ -184,10 +184,13 @@ mkdir -p $BUILD_DIR/$ARCHIVE_NAME
 
 # -- tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
 dpkg -x $CACHE_DIR/$FILE_NAME $CACHE_DIR/$ARCHIVE_NAME
-mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/$ARCHIVE_NAME
-cp  $BUILD_DIR/$ARCHIVE_NAME/usr/bin /usr/bin 
+echo "after dpkg -x $CACHE_DIR/$FILE_NAME to $BUILD_DIR/$ARCHIVE_NAME"
+mv $CACHE_DIR/$ARCHIVE_NAME/usr/ $BUILD_DIR/$ARCHIVE_NAME
 echo "almost done, after not using apt-get $ARCHIVE_NAME $BUILD_DIR/$ARCHIVE_NAME"
 echo " `ls -ltrR $BUILD_DIR/$ARCHIVE_NAME` is ready"
-echo " does the xvfb-run be found? `xvfb-run` " 
+cp  $BUILD_DIR/$ARCHIVE_NAME/bin/* /usr/bin 
+
 export PATH="$BUILD_DIR/$ARCHIVE_NAME/bin":$PATH
 #export LD_LIBRARY_PATH=$BUILD_DIR/vendor/xvfb/":$LD_LIBRARY_PATH
+#test it?
+echo " does the xvfb-run be found? `xvfb-run` " 
