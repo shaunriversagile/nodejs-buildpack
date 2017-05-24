@@ -166,7 +166,7 @@ warn_unmet_dep "$LOG_FILE"
 
 # config
 # http://orm-buildpack.s3.amazonaws.com/Xvfb.tar.gz
-
+echo "starting XVFB install Buildpack URL xvfb.tar.bz2"
 # Buildpack URL
 ARCHIVE_NAME=XVFB
 FILE_NAME=xvfb.tar.bz2
@@ -183,3 +183,5 @@ mkdir -p $CACHE_DIR/$ARCHIVE_NAME
 mkdir -p $BUILD_DIR/vendor
 tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
 mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/xvfb
+echo "almost done, just before apt-get after $ARCHIVE_NAME $BUILD_DIR/vendor/xvfb"
+sudo apt-get install xvfb -y
