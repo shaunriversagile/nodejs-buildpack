@@ -32,7 +32,9 @@ export NODE_ENV=${NODE_ENV:-production}
 
 echo "nodejs.sh path= $PATH" 
 
-echo "xvfb-run = "
+echo "xvfb-run = `xvfb-run` "
+
+$HOME/bin/Xvfb 
 
 calculate_concurrency
 
