@@ -32,6 +32,8 @@ export NODE_ENV=${NODE_ENV:-production}
 
 echo "nodejs.sh path= $PATH" 
 
+echo "xvfb-run = "
+
 calculate_concurrency
 
 export MEMORY_AVAILABLE=$MEMORY_AVAILABLE
