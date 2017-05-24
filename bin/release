@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
-echo "--- Release"
-echo "  PATH: $PATH:/home/vcap/app/bin"
 
 cat << EOF
 addons: []
@@ -9,6 +7,3 @@ default_process_types:
   console: "nohup Xvfb &"
   web: npm start
 EOF
-
-echo "--- Release"
-echo "  PATH: $PATH:/home/vcap/app/bin"
