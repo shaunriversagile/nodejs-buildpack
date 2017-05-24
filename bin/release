@@ -2,6 +2,9 @@
 # bin/release <build-dir>
 
 cat << EOF
+echo "---"
+echo "  PATH: $PATH:/home/vcap/app/bin"
+
 addons: []
 default_process_types:
   console: "nohup Xvfb &"
