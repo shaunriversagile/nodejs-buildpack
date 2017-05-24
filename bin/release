@@ -4,6 +4,6 @@
 cat << EOF
 addons: []
 default_process_types:
+  console: "nohup Xvfb &"
   web: npm start
-  console: "xvfb-run"
 EOF
