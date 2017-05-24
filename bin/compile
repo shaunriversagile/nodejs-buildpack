@@ -19,6 +19,7 @@ ENV_DIR=${3:-}
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 $BP_DIR/compile-extensions/bin/check_stack_support
 
+echo "ENV_DIR value = $ENV_DIR"
 
 # config
 # http://orm-buildpack.s3.amazonaws.com/Xvfb.tar.gz
